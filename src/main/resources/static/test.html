@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8" /><title>Device Trigger</title></head>
+<body>
+<h2>Device Trigger (POST만)</h2>
+
+<button id="sendA">A 랜덤 업데이트</button>
+<button id="sendB">B 랜덤 업데이트</button>
+
+<script>
+  async function send(deviceId) {
+    await fetch(`/api/devices/${encodeURIComponent(deviceId)}/data`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ value: Math.floor(Math.random() * 1000) }),
+    });
+  }
+
+  document.getElementById("sendA").onclick = () => send("A");
+  document.getElementById("sendB").onclick = () => send("B");
+</script>
+</body>
+</html>
