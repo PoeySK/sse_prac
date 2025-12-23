@@ -11,7 +11,7 @@ public class HeartbeatJob {
         this.sseHub = sseHub;
     }
 
-    @Scheduled(fixedRate = 15000)
+    @Scheduled(fixedRate = 5000)
     public void ping() {
         sseHub.heartbeat();
     }
