@@ -17,16 +17,4 @@ public class DeviceState {
         this.value = value;
         this.updateAt = updateAt;
     }
-
-    public String getDeviceId() {
-        return deviceId;
-    }
-
-    public double getValue() {
-        return value;
-    }
-
-    public Instant getUpdateAt() {
-        return updateAt;
-    }
 }
